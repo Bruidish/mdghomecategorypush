@@ -1,0 +1,11 @@
+.DS_Store
+#config PS
+/config_*.xml
+#override
+/src/override/*.php
+!/src/override/index.php
+#images
+/views/img/*/*
+!/views/img/*/index.php
+#divers
+/views/.sass-cache/*

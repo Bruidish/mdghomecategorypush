@@ -1,0 +1,19 @@
+{
+    "hooks": [
+        "actionFrontControllerSetMedia",
+        "displayHome"
+    ],
+
+    "tabs": [
+        {"tab_name": "Mdg Thème", "module_name": "mdgmodule", "class_name": "AdminMdgModules", "removeOnUninstall": true},
+        {"tab_name": "Accueil : Catégories", "module_name": "mdghomecategorypush", "class_name": "AdminCategoryBlock", "parent_class_name": "AdminMdgModules", "icon": "bubble_chart", "removeOnUninstall": true}
+    ],
+
+    "models": [
+        {"className": "mdg\\homecategorypush\\Models\\CategoryBlockModel", "removeOnUninstall": true}
+    ],
+
+    "fields": [
+
+    ]
+}

@@ -1,0 +1,45 @@
+/**
+ * @author:  Michel Dumont <michel.dumont.io>
+ * @version: 1.0.0 - 2021-01-27
+ * @license: http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @package: prestashop 1.7
+ */
+
+@charset "UTF-8";
+@import "compass";
+@import "variables";
+@import "mixins";
+
+#mdghomecategorypush-wrap {
+    ul {
+        margin: 0 auto;
+        max-width: 1400px;
+        @include display-flex;
+        @include flex-flow(row wrap);
+        li {
+            padding: 15px;
+            max-width: 50%;
+            @include flex(50%);
+
+            a {
+                display: block;
+                position: relative;
+                text-align: center;
+
+                img:nth-of-type(2) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 5;
+                    opacity: 0;
+                    @include transition(opacity .3s);
+                }
+                &:hover {
+                    img:nth-of-type(2) {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

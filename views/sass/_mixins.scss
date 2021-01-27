@@ -1,0 +1,57 @@
+/**
+ * @author:  Michel Dumont <michel.dumont.io>
+ * @version: 1.0.0 - 2021-01-27
+ * @license: http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @package: prestashop 1.7
+ */
+
+ @mixin sticky() {
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+@mixin justify-content($justify: center) {
+    @if ($justify == space-between) {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else {
+        -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+    }
+    justify-content: $justify;
+}
+
+@mixin grid-columns($template: 1fr 1fr 1fr, $gap: 5%) {
+    @supports not (display: grid) {
+        @include flex-inline();
+        @include justify-content(space-between);
+    }
+    @supports (display: grid) {
+        display: -ms-grid;
+        display: grid;
+        @include grid-columns-template($template, $gap);
+    }
+}
+@mixin grid-columns-template($template: 1fr 1fr 1fr, $gap: 5%) {
+    @supports (display: grid) {
+        grid-template-columns: $template;
+        grid-gap: $gap;
+    }
+}
+
+@mixin breakPoint($breakpoint, $minMax: max-width) {
+    @if $breakpoint == 'xs' {
+        @media ($minMax: 575.98px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == 'sm' {
+        @media ($minMax: 767.98px) {@content;}
+    }
+    @else if $breakpoint == 'md' {@media ($minMax: 991.98px) {@content;}}
+    @else if $breakpoint == 'lg' {
+        @media ($minMax: 1199.98px) {
+            @content;
+        }
+    }
+}
