@@ -16,7 +16,7 @@ class CategoryBlockForm extends \mdg\homecategorypush\Forms\ObjectForm
     public function __construct($object = null, $legacyContext = null)
     {
         parent::__construct($object, $legacyContext);
-        parent::constructFormHelper('AdminCategoryBlock', $object);
+        parent::constructFormHelper(__FILE__, $object);
     }
 
     /**
