@@ -21,6 +21,9 @@ abstract class ObjectForm
     /** @var object */
     public $module;
 
+    /** @var string nom du controller qui charge le formulaire */
+    public $controller_name;
+
     /** @var string nom du fichier nécessaire pour les traductions */
     public $form_name;
 
@@ -48,6 +51,7 @@ abstract class ObjectForm
     {
         $this->context = \Context::getContext();
         $this->module = \Module::getInstanceByName(basename(realpath(dirname(__FILE__) . '/../../..')));
+        $this->controller_name = $this->context->controller->controller_name;
     }
 
     /** Renseigne les variables nécessaires
@@ -74,7 +78,7 @@ abstract class ObjectForm
         }
 
         $this->currentToken = \Tools::getValue('token');
-        $this->currentIndex = "index.php?controller={$this->context->controller->controller_name}";
+        $this->currentIndex = "index.php?controller={$this->controller_name}";
 
         $this->form_name = basename($filePath, '.php');
         $this->form_action = "submit_{$this->form_name}";
