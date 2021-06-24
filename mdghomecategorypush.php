@@ -1,9 +1,10 @@
 <?php
 /**
- * @author:  Michel Dumont <michel.dumont.io>
- * @version: 1.0.0 - 2019-10-07
- * @license: http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- * @package: prestashop 1.7
+ * @author Michel Dumont <https://michel.dumont.io>
+ * @version 1.0.12- 2021-06-24
+ * @copyright 2019
+ * @license http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @package prestashop 1.7
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -23,7 +24,7 @@ class mdghomecategorypush extends \Module implements WidgetInterface
     {
         $this->name = 'mdghomecategorypush';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
         $this->author = 'Michel Dumont';
         $this->need_instance = 0;
         $this->bootstrap = 1;
