@@ -1,7 +1,7 @@
 <?php
 /**
  * @author Michel Dumont <https://michel.dumont.io>
- * @version 1.0.12- 2021-06-24
+ * @version 1.0.3- 2021-06-25
  * @copyright 2019
  * @license http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  * @package prestashop 1.7
@@ -24,7 +24,7 @@ class mdghomecategorypush extends \Module implements WidgetInterface
     {
         $this->name = 'mdghomecategorypush';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'Michel Dumont';
         $this->need_instance = 0;
         $this->bootstrap = 1;

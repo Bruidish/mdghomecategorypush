@@ -40,7 +40,7 @@ class CategoryBlockModel extends \mdg\homecategorypush\Models\ObjectModel
     public $button_text;
 
     public static $definition = [
-        'table' => 'mdghomecategorypush_cateforyblock',
+        'table' => 'mdghomecategorypush_categoryblock',
         'primary' => 'id_association',
         'multilang' => true,
         'multi_shop' => true,
